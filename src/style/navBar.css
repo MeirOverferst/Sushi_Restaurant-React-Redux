@@ -1,0 +1,53 @@
+.blabla{
+    background-image: url(../images/wood.jpg);
+    background-repeat: repeat;
+    display: flex;
+    /* height: 6vh; */
+    justify-content: space-between;
+}
+
+.cl-effect-5 .navlink {
+	overflow: hidden;
+	padding: 0 15px 40px;
+	height: 0.5em;
+}
+
+.cl-effect-5 .navlink span {
+	position: relative;
+	display: inline-block;
+    transition: transform 0.3s;
+    color: rgb(237, 27, 36);
+    margin: 0 50px;
+
+}
+
+.cl-effect-5 .navlink span::before {
+	position: absolute;
+	top: 100%;
+	content: attr(data-hover);
+	font-weight: 700;
+    transform: translate3d(0,0,0);
+    color: rgb(237, 27, 36);
+
+}
+
+.cl-effect-5 .navlink:hover span,
+.cl-effect-5 .navlink:focus span {
+
+	transform: translateY(-100%);
+}
+
+
+
+.navlink {
+	position: relative;
+	display: inline-block;
+	margin:0px 0px  10px;
+	outline: none;
+	color:  rgb(237, 27, 36);
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+    font-size: 2em;
+}

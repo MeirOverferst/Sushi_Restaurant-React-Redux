@@ -1,0 +1,31 @@
+.homeWrpr{
+  background-image: url(../images/Red_Japanese_Wave_Seamless_Pattern.jpg);
+  background-position: center;
+  background-size:cover;
+  position: relative;
+  height: 94.8vh;
+
+    } 
+.centeral{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+     transform: translate(-50%, -50%);
+}
+.innerHomeBtn{
+    color: rgb(0, 0, 0);
+}
+.homeBtn:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+.introImg{
+    position: relative;
+    top: 1em;
+    display: block;
+    width: 35%;
+margin: auto;
+    height: 92vh;
+}

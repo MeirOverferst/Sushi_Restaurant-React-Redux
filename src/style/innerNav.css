@@ -1,0 +1,53 @@
+.cl-effect-inner{
+    display: flex;
+    justify-content: center;
+} 
+
+
+.cl-effect-inner .nav-ItemInner {
+	overflow: hidden;
+	padding: 5px 15px 45px 15px;
+    height: 0.5em;
+    text-align: center;
+}
+
+.cl-effect-inner .nav-ItemInner span {
+	position: relative;
+	display: inline-block;
+    transition: transform 0.2s;
+    color: rgb(237, 27, 36);
+    margin: 0 50px;
+    
+
+}
+
+.cl-effect-inner .nav-ItemInner span::before {
+	position: absolute;
+	top: 100%;
+	content: attr(data-hover);
+	font-weight: 700;
+    transform: translate3d(0,0,0);
+    color: rgb(237, 27, 36);
+
+}
+
+.cl-effect-inner .nav-ItemInner:hover span,
+.cl-effect-inner .nav-ItemInner:focus span {
+
+	transform: translateY(-100%);
+}
+
+
+
+.nav-ItemInner {
+	position: relative;
+	display: inline-block;
+    margin:5px 0px  10px;
+	outline: none;
+	color:  rgb(237, 27, 36);
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+    font-size: 2em;
+}
