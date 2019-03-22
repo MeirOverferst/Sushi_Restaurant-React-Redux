@@ -18,7 +18,7 @@ class Salads extends Component {
             return (
               <div className="container col-3" key={index}>
                 <h4 className="title" >{salad.productName}</h4>
-                <img className="card-img-top img-fluid " src={salad.productImg} />
+                <img className="card-img-top img-fluid "  alt="salad.productName" src={salad.productImg} />
                 <button className="col-4" onClick={this.props.decrement}  identity={index}>-</button>
                 <input className="col-4" type="text" onChange={this.props.changeValue} identity={index} value={this.props['value'+ index]}/>
                 <button className="col-4" onClick={this.props.increment} identity={index}>+</button>

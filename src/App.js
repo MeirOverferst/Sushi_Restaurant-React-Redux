@@ -6,6 +6,7 @@ import {CartContainer} from './components/Cart';
 import Menu from './components/Menu';
 import Confirm from './components/Confirm';
 import './style/navBar.css';
+
 export default class App extends Component {
   render() {
     return (

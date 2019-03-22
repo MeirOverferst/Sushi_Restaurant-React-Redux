@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
-import {PizzaContainer} from './Pizzas';
-import {BurgerContainer} from './Burgers';
+import {BoxesContainer} from './boxes';
+import {SoupsContainer} from './Soups';
 import {SaladContainer} from './Salads';
 import '../style/menu.css';
 
@@ -27,8 +27,8 @@ export default class Menu extends Component {
     return (
       <>
         <Route path="/menu" exact component={ProductPage} />
-        <Route path="/menu/pizzas" component={PizzaContainer} />
-        <Route path="/menu/burgers" component={BurgerContainer}/>
+        <Route path="/menu/pizzas" component={BoxesContainer} />
+        <Route path="/menu/burgers" component={SoupsContainer}/>
         <Route path="/menu/salads" component={SaladContainer}/>
       </>
     )

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { burgersInfo } from '../config/soupsInfo';
+import { soupsInfo } from '../config/soupsInfo';
 import { connect } from 'react-redux';
-import { burgerChange, burgerIncrement, addBurgerToOrder ,burgerDecrement } from '../redux/redux';
+import { soupChange, soupIncrement, addSoupToOrder ,soupDecrement } from '../redux/redux';
 import '../style/innerNav.css';
 
-class Burgers extends Component {
+class Soups extends Component {
   render() {
     return (
       <>
@@ -14,17 +14,17 @@ class Burgers extends Component {
       <NavLink  className=" nav-ItemInner " to="/menu/pizzas"><span data-hover="Boxes">Boxes</span></NavLink>
     </div>
       <div className= "d-sm-flex flex-wrap">
-        {burgersInfo.map((burger, index) => {
+        {soupsInfo.map((soup, index) => {
             return (
               <div className="container col-3" key={index}>
-                <h4 className="title" >{burger.productName}</h4>
-                <img className="card-img-top img-fluid " src={burger.productImg} />
+                <h4 className="title" >{soup.productName}</h4>
+                <img className="card-img-top img-fluid " alt="soup.productName" src={soup.productImg} />
                 <button className="col-4" onClick={this.props.decrement}  identity={index}>-</button>
                 <input className="col-4" type="text" onChange={this.props.changeValue} identity={index} value={this.props['value'+ index]}/>
                 <button className="col-4" onClick={this.props.increment} identity={index}>+</button>
                 <br />
                 <div className="mt-3">
-                <button bbuttoncounter={index} burgertype={burger.productName} price={burger.price} className="btn btn-success" onClick={this.props.addToOrder}>Add to Order</button><span><strong>&nbsp;{burger.price}$</strong></span>
+                <button bbuttoncounter={index} souptype={soup.productName} price={soup.price} className="btn btn-success" onClick={this.props.addToOrder}>Add to Order</button><span><strong>&nbsp;{soup.price}$</strong></span>
                 </div>
                 <hr />
               </div>
@@ -42,7 +42,7 @@ class Burgers extends Component {
 const mapStateToProps = state => {
   return {
     value0: state.values[0],
-   value1: state.values[1],
+    value1: state.values[1],
     value2: state.values[2],
     value3: state.values[3]
   }
@@ -50,11 +50,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    changeValue: ev => dispatch(burgerChange(ev)),
-    increment: ev => dispatch(burgerIncrement(ev)),
-    decrement: ev => dispatch(burgerDecrement(ev)),
-    addToOrder: ev => dispatch(addBurgerToOrder(ev))
+    changeValue: ev => dispatch(soupChange(ev)),
+    increment: ev => dispatch(soupIncrement(ev)),
+    decrement: ev => dispatch(soupDecrement(ev)),
+    addToOrder: ev => dispatch(addSoupToOrder(ev))
   }
 }
 
-export const BurgerContainer = connect(mapStateToProps, mapDispatchToProps)(Burgers)
+export const SoupsContainer = connect(mapStateToProps, mapDispatchToProps)(Soups)

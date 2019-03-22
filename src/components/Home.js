@@ -8,7 +8,7 @@ export default class Home extends Component {
     return (
       <>
       <div className="homeWrpr">
-      <img className="introImg" src={introImg}  />
+      <img className="introImg" src={introImg} alt="intro image" />
       <div className="cl-effect-5 centeral">
       <NavLink  className=" nav-Item navlink centeral" to="/menu"><span data-hover="menu">menu</span></NavLink>
       </div>

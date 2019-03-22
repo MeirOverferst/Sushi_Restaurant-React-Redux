@@ -23,7 +23,7 @@ import img21 from "../images/box_vegan_for_two.jpg";
 import img22 from "../images/box_party_platte.jpg";
 import img23 from "../images/box_party_platte_vegetarisch.jpg";
 
-export const pizzasInfo=[
+export const boxesInfo=[
     {productName: 'Sushi box for Two', price: 6.95,productImg:img0},
     {productName: 'Salmon Box', price: 10.95,productImg:img1},
     {productName: 'Collection Box', price: 10.95,productImg:img2},

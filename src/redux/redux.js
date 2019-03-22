@@ -9,69 +9,69 @@ const reducer = (state = initialState, action) => {
   const updatedState = {...state};
 
   switch(action.type) {
-    case 'changePizzaValue':
-    const pizzaInputIdentity = action.event.target.getAttribute('identity');
-    updatedState.values[pizzaInputIdentity] = action.event.target.value;
+    case 'changeBoxValue':
+    const boxInputIdentity = action.event.target.getAttribute('identity');
+    updatedState.values[boxInputIdentity] = action.event.target.value;
     console.log(updatedState.basket);
     return updatedState;
-    case 'pizzaIncrement':
-    const buttonIncIdentityPizza = action.event.target.getAttribute('identity');
-    updatedState.values[buttonIncIdentityPizza] = parseInt(state.values[buttonIncIdentityPizza]) + 1
+    case 'boxIncrement':
+    const buttonIncIdentityBox = action.event.target.getAttribute('identity');
+    updatedState.values[buttonIncIdentityBox] = parseInt(state.values[buttonIncIdentityBox]) + 1
     console.log(updatedState.basket);
     return updatedState;
-    case 'pizzaDecrement':
-    const buttonDecIdentityPizza = action.event.target.getAttribute('identity');
-    updatedState.values[buttonDecIdentityPizza] = parseInt(state.values[buttonDecIdentityPizza]) - 1
-    if(state.values[buttonDecIdentityPizza] < 1){
-      state.values[buttonDecIdentityPizza] = 1;}
+    case 'boxDecrement':
+    const buttonDecIdentityBox = action.event.target.getAttribute('identity');
+    updatedState.values[buttonDecIdentityBox] = parseInt(state.values[buttonDecIdentityBox]) - 1
+    if(state.values[buttonDecIdentityBox] < 1){
+      state.values[buttonDecIdentityBox] = 1;}
     return updatedState;
-    case 'addPizza':
-    let pproduct = action.event.target.getAttribute('pizzatype');
-    let pprice = parseFloat(action.event.target.getAttribute('price'));
-    let pbuttonIdentifier = parseInt(action.event.target.getAttribute('buttoncounter'));
-    const pizzaFound = updatedState.basket.find(item => item.product === pproduct); 
-    if (pizzaFound) {
-    pizzaFound.quantity = parseInt(updatedState.values[pbuttonIdentifier]);
+    case 'addBox':
+    let bproduct = action.event.target.getAttribute('boxtype');
+    let bprice = parseFloat(action.event.target.getAttribute('price'));
+    let bbuttonIdentifier = parseInt(action.event.target.getAttribute('buttoncounter'));
+    const boxFound = updatedState.basket.find(item => item.product === bproduct); 
+    if (boxFound) {
+    boxFound.quantity = parseInt(updatedState.values[bbuttonIdentifier]);
     } else {
-        const pizzaObject = {product: pproduct, price: pprice, quantity: parseInt(updatedState.values[pbuttonIdentifier])};
-        updatedState.basket = [...state.basket, pizzaObject];
-        state.values[pbuttonIdentifier] = 1; 
-      }
-      if(state.values[pbuttonIdentifier]> 1 ){
-        state.values[pbuttonIdentifier] = 1; 
-      }
-      console.log(updatedState.basket);
-      return updatedState;
-      case 'changeBurgerValue':
-      const burgerInputIdentity = action.event.target.getAttribute('identity');
-      updatedState.values[burgerInputIdentity] = action.event.target.value;
-      return updatedState;
-    case 'burgerIncrement':
-      const buttonIncIdentityBurger = action.event.target.getAttribute('identity');
-      updatedState.values[buttonIncIdentityBurger] = parseInt(state.values[buttonIncIdentityBurger]) + 1
-      return updatedState;
-      case 'burgerDecrement':
-      const buttonDecIdentityBurger = action.event.target.getAttribute('identity');
-      updatedState.values[buttonDecIdentityBurger] = parseInt(state.values[buttonDecIdentityBurger]) - 1
-      if(state.values[buttonDecIdentityBurger] <1){
-        state.values[buttonDecIdentityBurger] = 1;}
-        return updatedState;
-    case 'addBurger':
-      let bproduct = action.event.target.getAttribute('burgertype');
-      let bprice = parseFloat(action.event.target.getAttribute('price'));
-      let bbuttonIdentifier = parseInt(action.event.target.getAttribute('bbuttoncounter'));
-      const burgerFound = updatedState.basket.find(item => item.product === bproduct); 
-
-      if (burgerFound) {
-        burgerFound.quantity = parseInt(updatedState.values[bbuttonIdentifier]);
-      } else {
-       
-        const burgerObject = {product: bproduct, price: bprice, quantity: parseInt(updatedState.values[bbuttonIdentifier])};
-        updatedState.basket = [...state.basket, burgerObject];
-        state.values[bbuttonIdentifier] = 1;
+        const boxObject = {product: bproduct, price: bprice, quantity: parseInt(updatedState.values[bbuttonIdentifier])};
+        updatedState.basket = [...state.basket, boxObject];
+        state.values[bbuttonIdentifier] = 1; 
       }
       if(state.values[bbuttonIdentifier]> 1 ){
         state.values[bbuttonIdentifier] = 1; 
+      }
+      console.log(updatedState.basket);
+      return updatedState;
+      case 'changeSoupValue':
+      const soupInputIdentity = action.event.target.getAttribute('identity');
+      updatedState.values[soupInputIdentity] = action.event.target.value;
+      return updatedState;
+    case 'soupIncrement':
+      const buttonIncIdentitySoup = action.event.target.getAttribute('identity');
+      updatedState.values[buttonIncIdentitySoup] = parseInt(state.values[buttonIncIdentitySoup]) + 1
+      return updatedState;
+      case 'soupDecrement':
+      const buttonDecIdentitySoup = action.event.target.getAttribute('identity');
+      updatedState.values[buttonDecIdentitySoup] = parseInt(state.values[buttonDecIdentitySoup]) - 1
+      if(state.values[buttonDecIdentitySoup] <1){
+        state.values[buttonDecIdentitySoup] = 1;}
+        return updatedState;
+    case 'addSoup':
+      let soproduct = action.event.target.getAttribute('souptype');
+      let soprice = parseFloat(action.event.target.getAttribute('price'));
+      let sobuttonIdentifier = parseInt(action.event.target.getAttribute('bbuttoncounter'));
+      const soupFound = updatedState.basket.find(item => item.product === soproduct); 
+
+      if (soupFound) {
+        soupFound.quantity = parseInt(updatedState.values[sobuttonIdentifier]);
+      } else {
+       
+        const soupObject = {product: soproduct, price: soprice, quantity: parseInt(updatedState.values[sobuttonIdentifier])};
+        updatedState.basket = [...state.basket, soupObject];
+        state.values[sobuttonIdentifier] = 1;
+      }
+      if(state.values[sobuttonIdentifier]> 1 ){
+        state.values[sobuttonIdentifier] = 1; 
       }
      
     //   console.log(updatedState.basket);
@@ -121,57 +121,57 @@ const reducer = (state = initialState, action) => {
 
 export let stat=initialState.basket
 
-export const change = ev => {
+export const boxChange = ev => {
   return { 
-      type: 'changePizzaValue',
+      type: 'changeBoxValue',
       event: ev
 }
 }
 
-export const increment = ev => {
+export const boxIncrement = ev => {
   return { 
-      type: 'pizzaIncrement',
+      type: 'boxIncrement',
       event: ev
 }
 }
 
-export const decrement = ev => {
+export const boxDecrement = ev => {
     return { 
-        type: 'pizzaDecrement',
+        type: 'boxDecrement',
         event: ev
     }
   }
 
-export const addToOrder = ev => {
+export const addBoxToOrder = ev => {
   return { 
-      type: 'addPizza',
+      type: 'addBox',
       event: ev
 }
 }
 
-export const burgerChange = ev => {
+export const soupChange = ev => {
   return { 
-      type: 'changeBurgerValue',
+      type: 'changeSoupValue',
       event: ev
 }
 }
 
-export const burgerIncrement = ev => {
+export const soupIncrement = ev => {
   return { 
-      type: 'burgerIncrement',
+      type: 'soupIncrement',
       event: ev
 }
 }
-export const burgerDecrement = ev => {
+export const soupDecrement = ev => {
   return { 
-      type: 'burgerDecrement',
+      type: 'soupDecrement',
       event: ev
   }
 }
 
-export const addBurgerToOrder = ev => {
+export const addSoupToOrder = ev => {
   return { 
-      type: 'addBurger',
+      type: 'addSoup',
       event: ev
 }
 }
