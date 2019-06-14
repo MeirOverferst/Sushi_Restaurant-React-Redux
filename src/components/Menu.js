@@ -11,8 +11,8 @@ class ProductPage extends Component {
       <div className="menu-body"> 
       <h2 className="menu-head">MENU</h2>
       <div className="cl-effect-menu menubox">
-        <NavLink className=" nav-Itemmenu " to="/menu/pizzas"><span data-hover="Boxes">Boxes</span></NavLink>
-        <NavLink className="  nav-Itemmenu "  to="/menu/burgers"><span data-hover="Soups">Soups</span></NavLink>
+        <NavLink className=" nav-Itemmenu " to="/menu/boxes"><span data-hover="Boxes">Boxes</span></NavLink>
+        <NavLink className="  nav-Itemmenu "  to="/menu/soups"><span data-hover="Soups">Soups</span></NavLink>
         <NavLink className=" nav-Itemmenu  " to="/menu/salads"><span data-hover="Salads">Salads</span></NavLink>
         <NavLink className=" nav-Itemmenu  " to="/menu/salads"><span data-hover="Drinks">Drinks</span></NavLink>
         <NavLink className=" nav-Itemmenu  " to="/menu/salads"><span data-hover="Deserts">Deserts</span></NavLink>
@@ -27,8 +27,8 @@ export default class Menu extends Component {
     return (
       <>
         <Route path="/menu" exact component={ProductPage} />
-        <Route path="/menu/pizzas" component={BoxesContainer} />
-        <Route path="/menu/burgers" component={SoupsContainer}/>
+        <Route path="/menu/boxes" component={BoxesContainer} />
+        <Route path="/menu/soups" component={SoupsContainer}/>
         <Route path="/menu/salads" component={SaladContainer}/>
       </>
     )
