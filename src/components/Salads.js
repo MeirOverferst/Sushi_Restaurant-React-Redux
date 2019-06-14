@@ -10,7 +10,7 @@ class Salads extends Component {
     return (
       <>
       <div className="cl-effect-inner ">
-      <NavLink  className=" nav-ItemInner " to="/menu/burgers"><span data-hover="Soups">Soups</span></NavLink>
+      <NavLink  className=" nav-ItemInner " to="/menu/soups"><span data-hover="Soups">Soups</span></NavLink>
       <NavLink  className=" nav-ItemInner " to="/menu/boxes"><span data-hover="Boxes">Boxes</span></NavLink>
     </div>
       <div className= "d-sm-flex flex-wrap">
