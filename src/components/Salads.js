@@ -11,7 +11,7 @@ class Salads extends Component {
       <>
       <div className="cl-effect-inner ">
       <NavLink  className=" nav-ItemInner " to="/menu/burgers"><span data-hover="Soups">Soups</span></NavLink>
-      <NavLink  className=" nav-ItemInner " to="/menu/pizzas"><span data-hover="Boxes">Boxes</span></NavLink>
+      <NavLink  className=" nav-ItemInner " to="/menu/boxes"><span data-hover="Boxes">Boxes</span></NavLink>
     </div>
       <div className= "d-sm-flex flex-wrap">
         {saladsInfo.map((salad, index) => {
